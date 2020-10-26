@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE projectrecord SYSTEM "projectrecord.dtd">
+<projectrecord>
+    <metadata>
+        <keyname>dtd</keyname>
+        <titulo>Especificação de DTD para Project Record's</titulo>
+        <begindate>21 de Outubro de 2020</begindate>
+        <enddate>28 de Outubro de 2020</enddate>
+        <supervisor link="http://www4.di.uminho.pt/~jcr/">Prof. José Carlos Ramalho</supervisor>
+    </metadata>
+    <workteam>
+        <elemento>
+            <nome>Diogo Pinto Ribeiro</nome>
+            <identificador>A84442</identificador>
+            <email>a84442@alunos.uminho.pt</email>
+            <pagina link="https://ribeiropdiogo.tk/">ribeiropdiogo.tk</pagina>
+        </elemento>
+    </workteam>
+    <abstract>
+        <paragrafo>Neste projeto o principal objetivo foi a <negrito>especificação de um ficheiro dtd</negrito> para e elaboração de <italico>Project Record's</italico> no <negrito>formato XML</negrito>.</paragrafo>
+    </abstract>
+    <deliverables>
+        <deliverable link="projectrecord.dtd">Ficheiro DTD</deliverable>
+        <deliverable link="pr.xml">Ficheiro XML</deliverable>
+    </deliverables>
+</projectrecord>
