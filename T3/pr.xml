@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE projectrecord SYSTEM "projectrecord.dtd">
+<projectrecord>
+    <metadata>
+        <keyname>XSL</keyname>
+        <titulo>Geração de Website com transformações XSL</titulo>
+        <begindate>28 de Outubro de 2020</begindate>
+        <enddate>4 de Novembro de 2020</enddate>
+        <supervisor link="http://www4.di.uminho.pt/~jcr/">Prof. José Carlos Ramalho</supervisor>
+    </metadata>
+    <workteam>
+        <elemento>
+            <nome>Diogo Pinto Ribeiro</nome>
+            <identificador>A84442</identificador>
+            <email>a84442@alunos.uminho.pt</email>
+            <pagina link="https://ribeiropdiogo.tk/">ribeiropdiogo.tk</pagina>
+        </elemento>
+    </workteam>
+    <abstract>
+        <paragrafo>Neste projeto o principal objetivo foi a <negrito>geração de um website com transformações XSL</negrito>
+            a partir de um dataset em XML, tendo uma página principal com o índice geral, e uma página individual
+            para cada registo. Foi tido me conta a existência de campos vazios para que não fossem exibidas opções
+            em branco na página do registo. Foi também estudada a possibilidade de ter a opção de avançar para páginas
+            seguintes, embora sem sucesso.</paragrafo>
+    </abstract>
+    <deliverables>
+        <deliverable link="arq.xsl">Ficheiro XSL</deliverable>
+        <deliverable link="arq.dtd">Ficheiro DTD</deliverable>
+    </deliverables>
+</projectrecord>
