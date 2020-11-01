@@ -112,7 +112,9 @@
                         
                         <div class="w3-container w3-center" style="padding-bottom: 100px;">
                             <p><xsl:value-of select="AUTOR"/> - <xsl:value-of select="DATA"/></p>
+                            [<a href="{generate-id(./preceding-sibling::*[1])}.html">Anterior</a>]
                             [<a href="index.html#i{generate-id()}">Voltar à Página Inicial</a>]
+                            [<a href="{generate-id(./following-sibling::*[1])}.html">Seguinte</a>]
                             
                         </div>
                     </div>
