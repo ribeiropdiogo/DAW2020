@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <key>TPC4</key>
+        <title>TPC 4</title>
+        <bdate>04/11/2020</bdate>
+        <edate>11/11/2020</edate>
+        <supervisor url="http://www.di.uminho.pt/~jcr">José Carlos Ramalho</supervisor>
+    </meta>
+    <team>
+        <member id="a84442">
+            <name>Diogo Pinto Ribeiro</name>
+            <email>a84442@alunos.uminho.pt</email>
+        </member>
+    </team>
+    <abstract>
+        <p>Neste TPC foi implementado um servidor em Node.js que para um dado link da forma localhost:7777/1 
+            retorna o ficheiro html com o arqueosítio correspondente. Foram implementados alguns
+            mecanismos para detetar links desejáveis e indesejáveis. Foi também criado um ficheiro xsl
+            baseado no do TPC 3, tendo sido substituídas funções generate-id() por funções position().
+        </p>
+    </abstract>
+    <deliverables>
+        <link url="serverfs.js">Servidor Node</link>
+        <link url="utils.js">Funções Auxiliares</link>
+        <link url="arq.xsl">Ficheiro XSL</link>
+    </deliverables>
+</pr>
