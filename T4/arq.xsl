@@ -40,7 +40,9 @@
                 </body>
             </html>
         </xsl:result-document>
-        <xsl:apply-templates select="//ARQELEM" mode="spages"/>
+        <xsl:apply-templates select="//ARQELEM" mode="spages">
+            <xsl:sort select="IDENTI"></xsl:sort>
+        </xsl:apply-templates>
     </xsl:template>
     
     <!-- Templates Índice .......................................... -->
