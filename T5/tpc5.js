@@ -36,7 +36,7 @@ http.createServer(function (req,res) {
             var pagearray = req.url.split("=")
             page = 1
             if(pagearray.length > 1) page = pagearray[1]
-            axios.get('http://localhost:3001/alunos?_limit=15&_page='+page)
+            axios.get('http://localhost:3001/alunos?_limit=10&_page='+page)
                 .then(function(resp) {
                     alunos = resp.data;
                     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
@@ -51,7 +51,7 @@ http.createServer(function (req,res) {
                     if(Number(page) > 1)
                         res.write('<a href="/alunos&page='+(Number(page) - 1)+'"><button class="w3-button w3-teal w3-round-large">Página Anterior</button></a>')
                     res.write('<a href="/"><button class="w3-button w3-teal w3-round-large">Voltar</button></a>')
-                    if(Number(page) < 25)
+                    if(Number(page) < 37)
                         res.write('<a href="/alunos&page='+(Number(page) + 1)+'"><button class="w3-button w3-teal w3-round-large">Página Seguinte</button></a>')
                     res.write(part2())
                     res.end()
