@@ -1,5 +1,6 @@
 var http = require('http');
 var axios = require('axios');
+const { Console } = require('console');
 
 function part1(title){
     var t = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>' + title + '</title>'
@@ -17,6 +18,26 @@ function part2(){
     return t;
 }
 
+function navigation(type,nav,res){
+
+    var anterior = 0, seguinte = 0
+
+    nav.forEach(link => {
+        page = link.split('rel="')[1].split('"')[0]
+        number = parseInt(link.split('_page=')[1].split('>')[0])
+        if (page == 'prev')
+            anterior = number
+        else if (page == 'next') 
+            seguinte = number
+    })
+    
+    if(anterior > 0)
+        res.write('<a href="/'+type+'&page='+anterior+'"><button class="w3-button w3-teal w3-round-large">Página Anterior</button></a>')
+    res.write('<a href="/"><button class="w3-button w3-teal w3-round-large">Voltar</button></a>')
+    if(seguinte > 0)
+        res.write('<a href="/'+type+'&page='+seguinte+'"><button class="w3-button w3-teal w3-round-large">Página Seguinte</button></a>')
+                    
+}
 
 http.createServer(function (req,res) {
     console.log(req.method + ' ' + req.url);
@@ -39,6 +60,7 @@ http.createServer(function (req,res) {
             axios.get('http://localhost:3001/alunos?_limit=10&_page='+page)
                 .then(function(resp) {
                     alunos = resp.data;
+                    nav = resp.headers.link.split(',')
                     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
                     res.write(part1("Lista de Alunos"))
                     res.write('<h2>Lista de Alunos</h2>')
@@ -48,11 +70,7 @@ http.createServer(function (req,res) {
                         res.write('<li><a href="/alunos/' + a.id + '">' + a.id + ' - ' + a.nome + '</a></li>')
                     });
                     res.write('</ul>')
-                    if(Number(page) > 1)
-                        res.write('<a href="/alunos&page='+(Number(page) - 1)+'"><button class="w3-button w3-teal w3-round-large">Página Anterior</button></a>')
-                    res.write('<a href="/"><button class="w3-button w3-teal w3-round-large">Voltar</button></a>')
-                    if(Number(page) < 37)
-                        res.write('<a href="/alunos&page='+(Number(page) + 1)+'"><button class="w3-button w3-teal w3-round-large">Página Seguinte</button></a>')
+                    navigation("alunos",nav,res)
                     res.write(part2())
                     res.end()
                 })
@@ -87,21 +105,15 @@ http.createServer(function (req,res) {
             axios.get('http://localhost:3001/cursos?_limit=10&_page='+page)
                 .then(function(resp) {
                     alunos = resp.data;
+                    nav = resp.headers.link.split(',')
                     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
                     res.write(part1("Lista de Cursos"))
                     res.write('<h2>Lista de Cursos</h2>')
                     res.write('<ul class="w3-ul">')
-
                     alunos.forEach(c => {
                         res.write('<li><a href="/cursos/' + c.id + '">' + c.id + ' - ' + c.designacao + '</a></li>')
                     });
-
-                    res.write('</ul>')
-                    if(Number(page) > 1)
-                        res.write('<a href="/cursos&page='+(Number(page) - 1)+'"><button class="w3-button w3-teal w3-round-large">Página Anterior</button></a>')
-                    res.write('<a href="/"><button class="w3-button w3-teal w3-round-large">Voltar</button></a>')
-                    if(Number(page) < 5)
-                        res.write('<a href="/cursos&page='+(Number(page) + 1)+'"><button class="w3-button w3-teal w3-round-large">Página Seguinte</button></a>')
+                    navigation("cursos",nav,res)
                     res.write(part2())
                     res.end()
                 })
@@ -134,6 +146,7 @@ http.createServer(function (req,res) {
             axios.get('http://localhost:3001/instrumentos?_limit=10&_page='+page)
                 .then(function(resp) {
                     alunos = resp.data;
+                    nav = resp.headers.link.split(',')
                     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
                     res.write(part1("Lista de Instrumentos"))
                     res.write('<h2>Lista de Instrumentos</h2>')
@@ -141,13 +154,8 @@ http.createServer(function (req,res) {
                     alunos.forEach(i => {
                         res.write('<li><a href="/instrumentos/' + i.id + '">' + i.id + ' - ' + i["#text"] + '</li>')
                     });
-
                     res.write('</ul>')
-                    if(Number(page) > 1)
-                        res.write('<a href="/instrumentos&page='+(Number(page) - 1)+'"><button class="w3-button w3-teal w3-round-large">Página Anterior</button></a>')
-                    res.write('<a href="/"><button class="w3-button w3-teal w3-round-large">Voltar</button></a>')
-                    if(Number(page) < 3)
-                        res.write('<a href="/instrumentos&page='+(Number(page) + 1)+'"><button class="w3-button w3-teal w3-round-large">Página Seguinte</button></a>')
+                    navigation("instrumentos",nav,res)
                     res.write(part2())
                     res.end()
                 })
