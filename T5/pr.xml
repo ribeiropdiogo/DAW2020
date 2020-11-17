@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/Users/ribeiro/Google%20Drive/MIEI/4%C2%BA%20ano/1%C2%BA%20Semestre/DAW/pr.dtd">
+<pr>
+    <meta>
+        <key>TPC5</key>
+        <title>TPC 5</title>
+        <bdate>11/11/2020</bdate>
+        <edate>18/11/2020</edate>
+        <supervisor url="http://www.di.uminho.pt/~jcr">José Carlos Ramalho</supervisor>
+    </meta>
+    <team>
+        <member id="a84442">
+            <name>Diogo Pinto Ribeiro</name>
+            <email>a84442@alunos.uminho.pt</email>
+        </member>
+    </team>
+    <abstract>
+        <p>Neste TPC foi implementado um servidor em Node.js que escuta pedidos GET relativos
+            ao dataset da escola de música, fornecendo páginas para listagem de alunos, intrumentos
+            e cursos, bem como as páginas individuais para cada um dos elementos. Foi também implementado
+            um esquema de paginação para as listagens bem como alguma filtragem para pedidos incorretos.
+            Este servidor por sua vez contacta um json-server com o dataset da escola de musica, servindo
+            assim de intermediário. Para correr o json-server basta executar o seguinte comando:
+            json-server --p 3001 --watch db.json
+        </p>
+    </abstract>
+    <deliverables>
+        <link url="tpc5.js">Servidor Node.js</link>
+        <link url="db.json">Ficheiro json</link>
+    </deliverables>
+</pr>
