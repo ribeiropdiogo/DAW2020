@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/Users/ribeiro/Google%20Drive/MIEI/4%C2%BA%20ano/1%C2%BA%20Semestre/DAW/pr.dtd">
+<pr>
+    <meta>
+        <key>TPC6</key>
+        <title>TPC 6</title>
+        <bdate>18/11/2020</bdate>
+        <edate>15/11/2020</edate>
+        <supervisor url="http://www.di.uminho.pt/~jcr">José Carlos Ramalho</supervisor>
+    </meta>
+    <team>
+        <member id="a84442">
+            <name>Diogo Pinto Ribeiro</name>
+            <email>a84442@alunos.uminho.pt</email>
+        </member>
+    </team>
+    <abstract>
+        <p>Neste TPC foi implementado um servidor em Node.js para uma aplicação single page para 
+            gestão de tarefas(tasks). Existe a possibilidade de adicionar e editar tarefas, sendo 
+            que estas podem ser classificadas como feitas or por fazer. A implementação da aplicação 
+            esconde invocações a uma instância do json-server que é o responsável por adicionar,
+            atualizar e elimianar tarefas.
+        </p>
+    </abstract>
+    <deliverables>
+        <link url="server.js">Servidor Node.js</link>
+        <link url="db.json">Ficheiro json</link>
+    </deliverables>
+</pr>

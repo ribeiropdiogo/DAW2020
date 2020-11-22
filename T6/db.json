@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "id": "5",
+      "dateCreated": "2020-11-20",
+      "dateDued": "2020-11-23",
+      "who": "ribeiro",
+      "description": "funcionaaaaaa",
+      "type": "Appointment",
+      "state": "todo"
+    }
+  ],
+  "types": [
+    {
+      "name": "Homework"
+    },
+    {
+      "name": "Chore"
+    },
+    {
+      "name": "Appointment"
+    },
+    {
+      "name": "Exam"
+    },
+    {
+      "name": "Boring"
+    }
+  ]
+}

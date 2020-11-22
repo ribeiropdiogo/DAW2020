@@ -1,0 +1,17 @@
+{
+  "name": "tpc6",
+  "version": "1.0.0",
+  "description": "TPC 6 - DAW2020",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon server.js"
+  },
+  "author": "ribeiro",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "json-server": "^0.16.3",
+    "nodemon": "^2.0.6"
+  }
+}
