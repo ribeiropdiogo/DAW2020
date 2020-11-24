@@ -21,6 +21,7 @@ function recuperaInfo(request, callback){
     }
 }
 
+// This function returns the ID for a new task
 function generateId(tasks){
     var id = 0
     
@@ -33,7 +34,7 @@ function generateId(tasks){
     return id;
 }
 
-// POST Confirmation HTML Page Template -------------------------------------
+// Confirmation HTML Page Template 
 function geraConfirm(msg){
     return `
     <html>
@@ -62,7 +63,7 @@ function geraConfirm(msg){
     `
 }
 
-
+// Main Page HTML Template
 function geraPagPrincipal(tasks, types){
 
     var newid = generateId(tasks)
@@ -82,7 +83,7 @@ function geraPagPrincipal(tasks, types){
     `
 
 
-    // Tabela e Formulário adicionar
+    // Tables & Add Form
     pagHTML += `
         <div style="width: 100%; background-color: #e6e8e6">
             <div class="w3-container w3-col m12 l7" style="text-align: center; background-color: #e6e8e6;">
@@ -201,6 +202,7 @@ function geraPagPrincipal(tasks, types){
     return pagHTML
 }
 
+// Edit Form HTML Page Template
 function geraTaskEditForm(task, types){
 
     let pagHTML = `
@@ -218,7 +220,7 @@ function geraTaskEditForm(task, types){
     `
 
 
-    // Tabela e Formulário adicionar
+    // Edit Form
     pagHTML += `
         <div style="width: 100%; background-color: #e6e8e6">
             <div class="w3-container w3-col m12 l12" style="text-align: left; background-color: #e6e8e6">
@@ -291,14 +293,13 @@ function geraTaskEditForm(task, types){
     return pagHTML
 }
 
-// Criação do servidor
-
-var galunoServer = http.createServer(function (req, res) {
-    // Logger: que pedido chegou e quando
+// Server Creation
+var taskServer = http.createServer(function (req, res) {
+    // Logger: register which request has arrived and when
     var d = new Date().toISOString().substr(0, 16)
     console.log(req.method + " " + req.url + " " + d)
 
-    // Tratamento do pedido
+    // Request Handling
     if(static.recursoEstatico(req)){
         static.sirvoRecursoEstatico(req, res)
     } else {
@@ -386,6 +387,10 @@ var galunoServer = http.createServer(function (req, res) {
                                     res.write("<p>There was a problem deleting the task...")
                                     res.end()
                                 })
+                    } else {
+                        res.writeHead(200, {'Content-Type': 'text/html;charset=utf-8'})
+                        res.write(geraConfirm("Hey! Go "))
+                        res.end()
                     }
                 break
             case "POST":
@@ -431,5 +436,5 @@ var galunoServer = http.createServer(function (req, res) {
     }
 })
 
-galunoServer.listen(8888)
+taskServer.listen(8888)
 console.log('Servidor à escuta na porta 8888...')
