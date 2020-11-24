@@ -47,8 +47,8 @@ function geraConfirm(msg){
             <div class="w3-container w3-teal">
                 <h2>ToDo App</h2>
             </div>
-            <div class="w3-container">
-                <p>` + msg + ` <a href="/tasks">Home</a></p>
+            <div class="w3-container" style="height: 75%; display: flex; flex-wrap: wrap; align-content: center;">
+                <h2 style="margin-left: 10%">` + msg + ` <a href="/tasks">Home</a></h2>
             </div>
             <div class="w3-container w3-teal" style="position: fixed; left: 0; bottom: 0; width: 100%; color: white; text-align: center;">
                 <h4>TPC 6 - DAW2020</h4>
@@ -87,7 +87,8 @@ function geraPagPrincipal(tasks, types){
         <div style="width: 100%; background-color: #e6e8e6">
             <div class="w3-container w3-col m12 l7" style="text-align: center; background-color: #e6e8e6;">
                 <h2>ToDo Tasks</h2>
-                <table class="w3-table w3-border">
+                <div style="overflow-x:auto;">
+                <table class="w3-table w3-border w3-striped">
                     <tr>
                         <th>Date Created</th>
                         <th>Date Due</th>
@@ -102,46 +103,49 @@ function geraPagPrincipal(tasks, types){
         if(t.state == "todo")
             pagHTML += `
                 <tr>
-                    <td>${t.dateCreated}</td>
-                    <td>${t.dateDued}</td>
-                    <td>${t.who}</td>
-                    <td>${t.description}</td>
-                    <td>${t.type}</td>
-                    <td><a href="/tasks/${t.id}/edit"><button class="w3-button w3-teal w3-teal w3-round-large w3-small">Edit</button></a></td>
+                    <td style="vertical-align:middle">${t.dateCreated}</td>
+                    <td style="vertical-align:middle">${t.dateDued}</td>
+                    <td style="vertical-align:middle">${t.who}</td>
+                    <td style="vertical-align:middle">${t.description}</td>
+                    <td style="vertical-align:middle">${t.type}</td>
+                    <td style="vertical-align:middle"><a href="/tasks/${t.id}/edit"><button class="w3-button w3-teal w3-teal w3-round-large w3-small">Edit</button></a></td>
                 </tr>
             `
     });
 
     pagHTML += `
-                </table>
+                    </table>
+                </div>
                 <h2>Resolved Tasks</h2>
-                <table class="w3-table w3-border">
-                    <tr>
-                        <th>Date Created</th>
-                        <th>Date Due</th>
-                        <th>Owner</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                        <th>Option</th>
-                    </tr>
+                <div style="overflow-x:auto;">
+                    <table class="w3-table w3-border w3-striped">
+                        <tr>
+                            <th>Date Created</th>
+                            <th>Date Due</th>
+                            <th>Owner</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Option</th>
+                        </tr>
     `
 
     tasks.forEach(t => {
         if(t.state == "done")
             pagHTML += `
                 <tr>
-                    <td>${t.dateCreated}</td>
-                    <td>${t.dateDued}</td>
-                    <td>${t.who}</td>
-                    <td>${t.description}</td>
-                    <td>${t.type}</td>
-                    <td><a href="/tasks/${t.id}/delete"><button class="w3-button w3-teal w3-round-large w3-small">Delete</button></a></td>
+                    <td style="vertical-align:middle">${t.dateCreated}</td>
+                    <td style="vertical-align:middle">${t.dateDued}</td>
+                    <td style="vertical-align:middle">${t.who}</td>
+                    <td style="vertical-align:middle">${t.description}</td>
+                    <td style="vertical-align:middle">${t.type}</td>
+                    <td style="vertical-align:middle"><a href="/tasks/${t.id}/delete"><button class="w3-button w3-teal w3-round-large w3-small">Delete</button></a></td>
                 </tr>
             `
     });
                     
     pagHTML += `
-                </table>
+                    </table>
+                </div>
                 <br>
             </div>
             <div class="w3-container w3-col m12 l5" style="text-align: left; background-color: #e6e8e6">

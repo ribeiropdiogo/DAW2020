@@ -1,12 +1,93 @@
 {
   "tasks": [
     {
-      "id": "5",
-      "dateCreated": "2020-11-20",
-      "dateDued": "2020-11-23",
+      "id": "1",
+      "dateCreated": "2020-11-24",
+      "dateDued": "2020-11-25",
       "who": "ribeiro",
-      "description": "funcionaaaaaa",
+      "description": "aaa",
       "type": "Appointment",
+      "state": "done"
+    },
+    {
+      "id": "2",
+      "dateCreated": "2020-11-24",
+      "dateDued": "2020-11-25",
+      "who": "ribeiro",
+      "description": "TPC6",
+      "type": "Homework",
+      "state": "todo"
+    },
+    {
+      "id": "3",
+      "dateCreated": "2020-11-24",
+      "dateDued": "2020-12-01",
+      "who": "ribeiro",
+      "description": "Lavar Carro",
+      "type": "Chore",
+      "state": "todo"
+    },
+    {
+      "id": "4",
+      "dateCreated": "2020-11-24",
+      "dateDued": "2020-11-27",
+      "who": "ribeiro",
+      "description": "Find Batman",
+      "type": "Boring",
+      "state": "todo"
+    },
+    {
+      "id": "5",
+      "dateCreated": "2020-11-16",
+      "dateDued": "2020-11-25",
+      "who": "ribeiro",
+      "description": "See the Doctor",
+      "type": "Exam",
+      "state": "todo"
+    },
+    {
+      "id": "6",
+      "dateCreated": "2020-11-18",
+      "dateDued": "2020-11-25",
+      "who": "ribeiro",
+      "description": "Meeting with Batman",
+      "type": "Appointment",
+      "state": "todo"
+    },
+    {
+      "id": "7",
+      "dateCreated": "2020-11-25",
+      "dateDued": "2020-11-27",
+      "who": "ribeiro",
+      "description": "Defeat Darth Vader",
+      "type": "Appointment",
+      "state": "done"
+    },
+    {
+      "id": "8",
+      "dateCreated": "2020-11-24",
+      "dateDued": "2020-11-26",
+      "who": "ribeiro",
+      "description": "Pray to Rossi",
+      "type": "Appointment",
+      "state": "done"
+    },
+    {
+      "id": "9",
+      "dateCreated": "2020-11-01",
+      "dateDued": "2020-11-30",
+      "who": "ribeiro",
+      "description": "Pay Rent",
+      "type": "Appointment",
+      "state": "done"
+    },
+    {
+      "id": "10",
+      "dateCreated": "2020-11-23",
+      "dateDued": "2020-12-25",
+      "who": "ribeiro",
+      "description": "Teste DAW",
+      "type": "Exam",
       "state": "todo"
     }
   ],

@@ -5,7 +5,7 @@
         <key>TPC6</key>
         <title>TPC 6</title>
         <bdate>18/11/2020</bdate>
-        <edate>15/11/2020</edate>
+        <edate>25/11/2020</edate>
         <supervisor url="http://www.di.uminho.pt/~jcr">José Carlos Ramalho</supervisor>
     </meta>
     <team>
@@ -19,7 +19,8 @@
             gestão de tarefas(tasks). Existe a possibilidade de adicionar e editar tarefas, sendo 
             que estas podem ser classificadas como feitas or por fazer. A implementação da aplicação 
             esconde invocações a uma instância do json-server que é o responsável por adicionar,
-            atualizar e elimianar tarefas.
+            atualizar e elimianar tarefas. Foi também tido em conta a vertente responsiva do TPC, 
+            sido criada uma interface responsiva e compatível com diversos dispositivos móveis.
         </p>
     </abstract>
     <deliverables>
