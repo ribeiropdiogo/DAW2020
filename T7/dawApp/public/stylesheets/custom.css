@@ -1,0 +1,50 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+body {
+    background-color: #e6e8e6;
+}
+
+.tabela {
+    margin-bottom: 100px;
+    margin-top: 25px;
+}
+
+.tabela-responsiva {
+    overflow-x: auto;
+}
+
+.centered {
+    text-align: center; 
+}
+
+.pagetitle {
+    margin: 10px 20px 10px 20px;
+}
+
+.form {
+    margin: 10px 20px 10px 20px;
+}
+
+.custombutton {
+    margin-right: 10px;
+}
+
+.tpclist{
+    width: 30%;
+    margin-left: 20px;
+}
+
+.top-item {
+    margin-right: 10px;
+}
+
+.right-spacer {
+    margin-right: 5px;
+}

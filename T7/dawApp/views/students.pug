@@ -1,0 +1,51 @@
+extends layout
+
+block imports
+  script(src='/javascripts/req.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+  script(src='https://www.w3schools.com/lib/w3.js')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+block content
+    header.w3-container.w3-teal
+      h3.w3-left Students List
+      h3.w3-right 
+        a(href='/students/register') Register
+    if list.length > 0
+      .w3-container.tabela-responsiva
+        table.w3-table-all.w3-col.m12.l12.tabela(id='tabela')
+          tr
+            th(onclick="w3.sortHTML('#tabela','.item', 'td:nth-child(1)')" style="cursor:pointer;") Number
+              i.fa.fa-sort(style="font-size: 13px; margin-left: 3px;")
+            th(onclick="w3.sortHTML('#tabela','.item', 'td:nth-child(2)')" style="cursor:pointer;") Name
+              i.fa.fa-sort(style="font-size: 13px; margin-left: 3px;")
+            th Git
+            th TPC 1
+            th TPC 2
+            th TPC 3
+            th TPC 4
+            th TPC 5
+            th TPC 6
+            th TPC 7
+            th TPC 8
+            th Options
+          each s in list
+            tr.item
+              td
+                a(href='/students/'+s.numero) #{s.numero}
+              td= s.nome
+              td
+                a(href=s.git) #{s.git}
+              each tpc in s.tpc
+                td(style='text-align: center')
+                  if tpc == 1
+                    input(type='checkbox', name='tpc', id='tpc', value=tpc, checked disabled)
+                  else
+                    input(type='checkbox', name='tpc', id='tpc', value=tpc, disabled)
+              td(style='text-align: center')
+                button.w3-btn.w3-tiny.w3-blue-grey.w3-round-xlarge.deletebtn(type='submit', value='Delete', onclick='deleteStudent("'+s.numero+'")') Delete
+    else
+      .w3-container
+        p There are no students... 
+    footer.w3-container.w3-teal.footer
+      h4 TPC 7 - DAW2020

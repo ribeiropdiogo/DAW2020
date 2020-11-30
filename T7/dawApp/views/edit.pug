@@ -1,0 +1,62 @@
+extends layout
+
+block imports
+  script(src='/javascripts/req.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+
+block content
+    header.w3-container.w3-teal
+      h3.w3-left Edit Student
+      h3.w3-right 
+        a(href='/students') Home
+
+    .w3-container.pagetitle
+      h2 Edit Form
+
+    .w3-container.form
+      label.w3-text-black
+        b Number
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='number', value=student.numero, disabled)
+      br
+      label.w3-text-black
+        b Name
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='name', value=student.nome)
+      br
+      label.w3-text-black
+        b Git
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='git', value=student.git)
+      br
+      br
+      label.w3-text-black
+        b TPC
+      br
+      .item
+        label.w3-text-black TPC 1 
+          input.right-spacer(type='checkbox', name='tpc1', id='tpc1', value=student.tpc[0])
+        label.w3-text-black TPC 2 
+          input.right-spacer(type='checkbox', name='tpc2', id='tpc2', value=student.tpc[1])
+        label.w3-text-black TPC 3 
+          input.right-spacer(type='checkbox', name='tpc3', id='tpc3', value=student.tpc[2])
+        label.w3-text-black TPC 4 
+          input.right-spacer(type='checkbox', name='tpc4', id='tpc4', value=student.tpc[3])
+        label.w3-text-black TPC 5 
+          input.right-spacer(type='checkbox', name='tpc5', id='tpc5', value=student.tpc[4])
+        label.w3-text-black TPC 6 
+          input.right-spacer(type='checkbox', name='tpc6', id='tpc6', value=student.tpc[5])
+        label.w3-text-black TPC 7 
+          input.right-spacer(type='checkbox', name='tpc7', id='tpc7', value=student.tpc[6])
+        label.w3-text-black TPC 8 
+          input.right-spacer(type='checkbox', name='tpc8', id='tpc8', value=student.tpc[7])
+      br
+      br
+      input.w3-btn.w3-blue-grey.updatebtn.custombutton(type='submit', value='Update', onclick='update()')
+
+    footer.w3-container.w3-teal.footer
+      h4 TPC 7 - DAW2020
+    
+    script.
+      $('document').ready(check());
+  

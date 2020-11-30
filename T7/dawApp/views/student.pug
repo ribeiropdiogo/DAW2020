@@ -1,0 +1,50 @@
+extends layout
+
+block imports
+  script(src='/javascripts/req.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+
+block content
+  header.w3-container.w3-teal
+    h3.w3-left Student Page
+    h3.w3-right.top-item 
+      a(href='/students') Home
+    h3.w3-right.top-item 
+      a(href='/students/edit/'+student.numero) Edit
+    
+  .w3-container.pagetitle
+    h2 
+      b Name: 
+      | #{student.nome}
+    h2 
+      b Number: 
+      | #{student.numero}
+    h2 
+      b Git: 
+      a(href=student.git) #{student.git}
+    h3
+      b TPC
+    .item
+      label.w3-text-black TPC 1 
+        input.right-spacer(type='checkbox', name='tpc1', id='tpc1', value=student.tpc[0], disabled)
+      label.w3-text-black TPC 2 
+        input.right-spacer(type='checkbox', name='tpc2', id='tpc2', value=student.tpc[1], disabled)
+      label.w3-text-black TPC 3 
+        input.right-spacer(type='checkbox', name='tpc3', id='tpc3', value=student.tpc[2], disabled)
+      label.w3-text-black TPC 4 
+        input.right-spacer(type='checkbox', name='tpc4', id='tpc4', value=student.tpc[3], disabled)
+      label.w3-text-black TPC 5 
+        input.right-spacer(type='checkbox', name='tpc5', id='tpc5', value=student.tpc[4], disabled)
+      label.w3-text-black TPC 6 
+        input.right-spacer(type='checkbox', name='tpc6', id='tpc6', value=student.tpc[5], disabled)
+      label.w3-text-black TPC 7 
+        input.right-spacer(type='checkbox', name='tpc7', id='tpc7', value=student.tpc[6], disabled)
+      label.w3-text-black TPC 8 
+        input.right-spacer(type='checkbox', name='tpc8', id='tpc8', value=student.tpc[7], disabled)
+      
+
+  footer.w3-container.w3-teal.footer
+    h4 TPC 7 - DAW2020
+  
+  script.
+      $('document').ready(check());

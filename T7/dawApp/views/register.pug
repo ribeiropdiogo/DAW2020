@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    header.w3-container.w3-teal
+      h3.w3-left Register Students
+      h3.w3-right 
+        a(href='/students') Home
+
+    .w3-container.pagetitle
+      h2 Register Form
+
+    form.w3-container.form(action="/students", method='POST')
+      label.w3-text-black
+        b Number
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='number', value='')
+      br
+      label.w3-text-black
+        b Name
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='name', value='')
+      br
+      label.w3-text-black
+        b Git
+      br
+      input.w3-input.w3-border.w3-light-grey(type='text', name='git', value='')
+      br
+      br
+      input.w3-btn.w3-blue-grey.custombutton(type='submit', value='Submit')
+      input.w3-btn.w3-blue-grey.custombutton(type='reset', value='Reset')
+
+    footer.w3-container.w3-teal.footer
+      h4 TPC 7 - DAW2020
+  
