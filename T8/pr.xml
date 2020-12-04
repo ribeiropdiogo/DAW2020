@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pr>
     <meta>
-        <key>TPC7</key>
-        <title>TPC 7</title>
-        <bdate>25/11/2020</bdate>
-        <edate>2/12/2020</edate>
+        <key>TPC8</key>
+        <title>TPC 8</title>
+        <bdate>2/12/2020</bdate>
+        <edate>9/12/2020</edate>
         <supervisor url="http://www.di.uminho.pt/~jcr">José Carlos Ramalho</supervisor>
     </meta>
     <team>
@@ -14,13 +14,17 @@
         </member>
     </team>
     <abstract>
-        <p>Neste TPC foi criado um sistema de gestão dos alunos de DAW, usando o MongoDB para 
-            armazenamento e recorrendo ao node.js em conjunto com o Express. Foram criados 
-            todos os metodos para listar, criar, editar e apagar alunos, tendo tido em conta 
-            a questão dos tpcs serem um array. Para representar os tpc's foram usadas checkboxes. 
-            Foi tido em conta também a questão da responsividade.
+        <p>Neste TPC foi utilizado o sistema de upload de ficheiros da aula 8, sendo o principal
+            objetivo a implementação da possibilidade de fazer o upload de múltiplos ficheiros 
+            de uma só vez. Para isso deverá ser possível acrescentar campos no formulário através
+            de um botão de adição de mais campos. Após a implementação desta funcionalidade foram
+            também corrigidos alguns bugs relativos a casos específicos. Foi adicionado o campo
+            required para que não seja possível fazer uploads sem informação (validação de input 
+            básica).
     </abstract>
     <deliverables>
-        <link url="dawApp/">Pasta Aplicação</link>
+        <link url="server.js">Servidor</link>
+        <link url="html-template.js">Funções JavaScript utilizadas pelo servidor</link>
+        <link url="/public/imagens.js">Funções JavaScript utilizadas pelo cliente</link>
     </deliverables>
 </pr>
